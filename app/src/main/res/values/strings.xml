@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">GoogleCSEImageExample</string>
     <string name="google_custom_search_text">Google custom search text</string>
-    <string name="error_getting_images">Error obteniendo las imagenes</string>
 </resources>
