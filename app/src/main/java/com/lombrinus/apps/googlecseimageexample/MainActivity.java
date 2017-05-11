@@ -16,8 +16,8 @@ import es.lombrinus.projects.mods.gimageparser.gimages.Item;
 
 public class MainActivity extends AppCompatActivity implements MainAdapter.OnItemClickListener {
 
-    private static final String API_KEY = "AIzaSyA_N7dlmLkXyEVUDl7kH55k1O5e4tDL_bk";
-    private static final String SEARCH_CX = "015333751053696321047:y29iytmsn-k";
+    private static final String API_KEY = "";
+    private static final String SEARCH_CX = "";
 
     EditText mEditText;
     GridView mGrid;
@@ -44,13 +44,21 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
 
     private void search() {
 
+        if (API_KEY.isEmpty()) {
+            Toast.makeText(MainActivity.this, "API KEY no informado (Ver README.md)", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (SEARCH_CX.isEmpty()) {
+            Toast.makeText(MainActivity.this, "SEARCH ID no informado (Ver README.md)", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String texto = mEditText.getText().toString();
 
-        GImageParser.get(texto, API_KEY, SEARCH_CX, 10, new GImageParserListener() {
+        GImageParser.get(texto, API_KEY, SEARCH_CX, 10, 1, new GImageParserListener() {
             @Override
-            public void onError() {
+            public void onError(String error) {
 
-                Toast.makeText(MainActivity.this, R.string.error_getting_images, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT).show();
             }
 
             @Override
