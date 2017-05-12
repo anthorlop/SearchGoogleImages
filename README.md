@@ -9,7 +9,7 @@ repositories {
 }
 
 // GoogleSearchImageParser gradle dependencies
-compile 'es.lombrinus.projects.mods:GoogleSearchImageParser:1.0'
+compile 'es.lombrinus.projects.mods:GoogleSearchImageParser:1.1'
 ```
 
 ## Getting image items
