@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
 
         String texto = mEditText.getText().toString();
 
-        GImageParser.get(texto, API_KEY, SEARCH_CX, 10, 1, new GImageParserListener() {
+        GImageParser.get(texto, API_KEY, SEARCH_CX, new GImageParserListener() {
             @Override
             public void onError(String error) {
 
